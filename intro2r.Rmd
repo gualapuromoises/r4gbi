@@ -1,0 +1,45 @@
+---
+title: "Introducción a R"
+author: "Gualapuro Moises"
+date: "2023-02-15"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Operaciones básicas
+Las operaciones de matemáticas, lógica y de asignación. 
+
+$$
+\hat{x} =  \frac{\Sigma_{i=1}^{n}{x_i}}{n}
+$$
+
+```{r vector}
+x = c(1:100)
+xi = sum(x)/length(x)
+xi
+```
+
+Vectores con datos ausentes
+
+
+```{r vector1}
+x1 = c(1:10, NaN, 10:-20, NaN, 27)
+x1i = sum(x1, na.rm = TRUE)/length(x1)
+x1i
+```
+
+Cuando se coloca `na.rm=TRUE` entonces se quitan los datos ausentes en el cálculo. 
+
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
